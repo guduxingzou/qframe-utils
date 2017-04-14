@@ -19,3 +19,8 @@ func IsInput(list []string, item string) bool {
 	}
 	return false
 }
+
+// IsLastSource checks if a list of inputs (e.g. [one, two]) matches the last item in SourcesPath of item [two,one]
+func IsLastSource(list []string, item string) bool {
+	return list[len(list)-1] == item
+}
