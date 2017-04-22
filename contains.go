@@ -6,8 +6,15 @@ import (
 )
 
 
-// IsInput checks if a list of inputs (e.g. [one, two]) matches the suffix of item (two-one)
 func IsInput(list []string, item string) bool {
+	return IsItem(list, item)
+}
+
+// IsInput checks if a list of inputs (e.g. [one, two]) matches the suffix of item (two-one)
+func IsItem(list []string, item string) bool {
+	if item == "*" {
+		return true
+	}
 	prefixItem := fmt.Sprintf("->%s", item)
 	for _, i := range list {
 		if item == i {
